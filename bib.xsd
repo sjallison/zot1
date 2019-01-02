@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://biblatex-biber.sourceforge.net/biblatexml"
+    xmlns:bltx="http://biblatex-biber.sourceforge.net/biblatexml"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="entries">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="bltx:entry"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="entry">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="bltx:options"/>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element ref="bltx:abstract"/>
+                    <xs:element ref="bltx:annotation"/>
+                    <xs:element ref="bltx:crossref"/>
+                    <xs:element ref="bltx:institution"/>
+                    <xs:element ref="bltx:language"/>
+                    <xs:element ref="bltx:location"/>
+                    <xs:element ref="bltx:names"/>
+                    <xs:element ref="bltx:origpublisher"/>
+                    <xs:element ref="bltx:publisher"/>
+                </xs:choice>
+                <xs:element minOccurs="0" ref="bltx:file"/>
+                <xs:element minOccurs="0" ref="bltx:edition"/>
+                <xs:choice minOccurs="0">
+                    <xs:element ref="bltx:editoratype"/>
+                    <xs:element ref="bltx:eprint"/>
+                </xs:choice>
+                <xs:element minOccurs="0" ref="bltx:eprintclass"/>
+                <xs:element minOccurs="0" ref="bltx:eprinttype"/>
+                <xs:element minOccurs="0" ref="bltx:doi"/>
+                <xs:element minOccurs="0" ref="bltx:eid"/>
+                <xs:element minOccurs="0" ref="bltx:booksubtitle"/>
+                <xs:element minOccurs="0" ref="bltx:booktitle"/>
+                <xs:element minOccurs="0" ref="bltx:booktitleaddon"/>
+                <xs:element minOccurs="0" ref="bltx:indexsorttitle"/>
+                <xs:element minOccurs="0" ref="bltx:indextitle"/>
+                <xs:element minOccurs="0" ref="bltx:isbn"/>
+                <xs:element minOccurs="0" ref="bltx:label"/>
+                <xs:element minOccurs="0" ref="bltx:issn"/>
+                <xs:element minOccurs="0" ref="bltx:journaltitle"/>
+                <xs:element minOccurs="0" ref="bltx:issuetitle"/>
+                <xs:element minOccurs="0" ref="bltx:langid"/>
+                <xs:element minOccurs="0" ref="bltx:langidopts"/>
+                <xs:choice minOccurs="0">
+                    <xs:element ref="bltx:note"/>
+                    <xs:element ref="bltx:origlanguage"/>
+                    <xs:element ref="bltx:pagetotal"/>
+                </xs:choice>
+                <xs:element minOccurs="0" ref="bltx:mainsubtitle"/>
+                <xs:element minOccurs="0" ref="bltx:maintitle"/>
+                <xs:element minOccurs="0" ref="bltx:shorthand"/>
+                <xs:element minOccurs="0" ref="bltx:number"/>
+                <xs:element minOccurs="0" ref="bltx:relatedtype"/>
+                <xs:element minOccurs="0" ref="bltx:part"/>
+                <xs:element minOccurs="0" ref="bltx:series"/>
+                <xs:element minOccurs="0" ref="bltx:shorttitle"/>
+                <xs:element minOccurs="0" ref="bltx:relatedstring"/>
+                <xs:element minOccurs="0" ref="bltx:sorttitle"/>
+                <xs:element minOccurs="0" ref="bltx:sortyear"/>
+                <xs:element minOccurs="0" ref="bltx:subtitle"/>
+                <xs:element minOccurs="0" ref="bltx:title"/>
+                <xs:element minOccurs="0" ref="bltx:venue"/>
+                <xs:choice minOccurs="0">
+                    <xs:element ref="bltx:type"/>
+                    <xs:element ref="bltx:volumes"/>
+                </xs:choice>
+                <xs:element minOccurs="0" ref="bltx:url"/>
+                <xs:element minOccurs="0" ref="bltx:version"/>
+                <xs:element minOccurs="0" ref="bltx:volume"/>
+                <xs:element minOccurs="0" ref="bltx:pages"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="bltx:date"/>
+            </xs:sequence>
+            <xs:attribute name="entrytype" type="xs:NCName" use="required"/>
+            <xs:attribute name="id" type="xs:anyURI" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="options" type="xs:string"/>
+    <xs:element name="abstract" type="xs:string"/>
+    <xs:element name="annotation" type="xs:string"/>
+    <xs:element name="crossref" type="xs:NMTOKEN"/>
+    <xs:element name="institution">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="bltx:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="language">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="bltx:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="location">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="bltx:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="names">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="bltx:name"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:NCName" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="name">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="bltx:namepart"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="origpublisher">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="bltx:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="publisher">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="bltx:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="file" type="xs:anyURI"/>
+    <xs:element name="edition" type="xs:integer"/>
+    <xs:element name="editoratype" type="xs:NCName"/>
+    <xs:element name="eprint" type="xs:string"/>
+    <xs:element name="eprintclass" type="xs:NCName"/>
+    <xs:element name="eprinttype" type="xs:NCName"/>
+    <xs:element name="doi" type="xs:string"/>
+    <xs:element name="eid" type="xs:integer"/>
+    <xs:element name="booksubtitle" type="xs:string"/>
+    <xs:element name="booktitle" type="xs:string"/>
+    <xs:element name="booktitleaddon" type="xs:string"/>
+    <xs:element name="indexsorttitle" type="xs:string"/>
+    <xs:element name="indextitle" type="xs:string"/>
+    <xs:element name="isbn" type="xs:NMTOKEN"/>
+    <xs:element name="label" type="xs:NCName"/>
+    <xs:element name="issn" type="xs:NMTOKEN"/>
+    <xs:element name="journaltitle" type="xs:string"/>
+    <xs:element name="issuetitle" type="xs:string"/>
+    <xs:element name="langid" type="xs:NCName"/>
+    <xs:element name="langidopts" type="xs:string"/>
+    <xs:element name="note" type="xs:string"/>
+    <xs:element name="origlanguage" type="xs:NCName"/>
+    <xs:element name="pagetotal" type="xs:integer"/>
+    <xs:element name="mainsubtitle" type="xs:string"/>
+    <xs:element name="maintitle" type="xs:string"/>
+    <xs:element name="shorthand" type="xs:NCName"/>
+    <xs:element name="number" type="xs:NMTOKEN"/>
+    <xs:element name="relatedtype" type="xs:NCName"/>
+    <xs:element name="part" type="xs:integer"/>
+    <xs:element name="series" type="xs:string"/>
+    <xs:element name="shorttitle" type="xs:string"/>
+    <xs:element name="relatedstring" type="xs:string"/>
+    <xs:element name="sorttitle" type="xs:string"/>
+    <xs:element name="sortyear" type="xs:NMTOKEN"/>
+    <xs:element name="subtitle" type="xs:string"/>
+    <xs:element name="title" type="xs:string"/>
+    <xs:element name="venue" type="xs:string"/>
+    <xs:element name="type" type="xs:NCName"/>
+    <xs:element name="volumes" type="xs:integer"/>
+    <xs:element name="url" type="xs:anyURI"/>
+    <xs:element name="version" type="xs:decimal"/>
+    <xs:element name="volume" type="xs:NMTOKEN"/>
+    <xs:element name="pages">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="bltx:list"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="list">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="bltx:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="date">
+        <xs:complexType mixed="true">
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+                <xs:element ref="bltx:end"/>
+                <xs:element ref="bltx:start"/>
+            </xs:choice>
+            <xs:attribute name="type" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="namepart">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="bltx:namepart"/>
+            </xs:sequence>
+            <xs:attribute name="initial" type="xs:NCName"/>
+            <xs:attribute name="type" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="item">
+        <xs:complexType mixed="true">
+            <xs:choice maxOccurs="unbounded" minOccurs="0">
+                <xs:element ref="bltx:end"/>
+                <xs:element ref="bltx:start"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="start" type="xs:NMTOKEN"/>
+    <xs:element name="end" type="xs:NMTOKEN"/>
+</xs:schema>
